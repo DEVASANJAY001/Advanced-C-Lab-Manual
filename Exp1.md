@@ -44,7 +44,9 @@ int main() {
 
 Output:
 
-// paste the output screenshot
+![image](https://github.com/user-attachments/assets/8e1f7283-8c8b-4148-b973-b5af067f6867)
+
+![image](https://github.com/user-attachments/assets/2a383e5d-cffe-48be-a79d-86367cd43dde)
 
 
 Result:
