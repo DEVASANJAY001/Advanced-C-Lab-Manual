@@ -16,12 +16,41 @@ Else
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+struct vacc
+{
+    char name[20];
+    int age;
+};
+int main()
+{
+   struct vacc s;
+   printf("ENTER THE NAME: ");
+   scanf("%s",s.name);
+   printf("ENTER THE AGE: ");
+   scanf("%d",&s.age);
+   printf("Vaccine Eligibility\n");
+   if(s.age<=6)
+   {
+       printf("you are not eligible");
+   }
+   else
+   {
+       printf("you are eligible");
+   }
+}
+
+```
 
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/4961a386-6304-462d-a491-4a11a6912d45)
+
+![image](https://github.com/user-attachments/assets/b4487e01-e6de-47cd-a6cc-726bbe5d32fb)
+
+
 
 
 Result:
@@ -44,7 +73,39 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+struct Student {
+    int id;
+    char name[50];
+    float marks;
+};
+void displayStudent(struct Student s) {
+    printf("Student Details:\n");
+    printf("ID: %d\n", s.id);
+    printf("Name: %s\n", s.name);
+    printf("Marks: %.2f\n", s.marks);
+}
+struct Student inputStudent() {
+    struct Student s;
+    printf("Enter student ID: ");
+    scanf("%d", &s.id);
+    printf("Enter student name: ");
+    scanf(" %[^\n]", s.name);
+    printf("Enter student marks: ");
+    scanf("%f", &s.marks);
+    return s;
+}
+
+int main() {
+    struct Student s1;
+    s1 = inputStudent();
+    displayStudent(s1);
+
+    return 0;
+}
+
+```
 
 
 
@@ -52,7 +113,9 @@ Program:
 Output:
 
 
-//paste your output here
+
+![image](https://github.com/user-attachments/assets/58f0739c-cc4d-4360-99f4-2653a3ef53ca)
+
 
 
 
@@ -85,24 +148,35 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
-
-
-
+int main() {
+    char filename[100];
+    FILE *file;
+    scanf("%s", filename);
+    
+    file = fopen(filename, "w");
+    
+    if (file == NULL) {
+        printf("Error opening file!\n");
+        return 1;
+    }
+    
+    printf("%s File Created Successfully\n", filename);
+    printf("%s File Opened\n", filename);
+    
+    fclose(file);
+    printf("%s File Closed\n", filename);
+    
+    return 0;
+}
+```
 
 Output:
 
 
-//paste your output here
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/c0a6066c-4705-4b42-88ca-a8af5e9954d2)
 
 
 
@@ -132,20 +206,43 @@ Use scanf to input the file name into the name array and the number of strings i
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main() {
+    char filename[100];
+    FILE *file;
+    int n;
+    float value;
+    scanf("%s", filename);
+    
+    file = fopen(filename, "w");
+    
+    if (file == NULL) {
+        printf("Error opening file!\n");
+        return 1;
+    }
+    
+    printf("%s Opened", filename);
+    scanf("%d", &n);
+    
+    for (int i = 0; i < n; i++) {
+        scanf("%f", &value);
+        fprintf(file, "%.2f\n", value);
+    }
+    
+    fclose(file);
+    printf("\nData added Successfully\n");
 
-
-
+    
+    return 0;
+}
+```
 
 Output:
 
 
-//paste your output here
-
-
-
-
+![image](https://github.com/user-attachments/assets/832cd3b7-355a-457b-8ba0-75c3b99aa0f9)
 
 
 Result:
@@ -186,16 +283,46 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
-
-//type your code here
-
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Subject
+{
+    char name[20];
+    int marks;
+};
+int main()
+{
+    int i,n;
+    scanf("%d",&n);
+    struct Subject *s = (struct Subject *)malloc(n*sizeof(struct Subject));
+    if(s==NULL)
+    {
+        printf("Memory Alocation Failed\n");
+        return 1;
+    }
+    for(i=0;i<n;i++)
+    {
+        scanf("%s %d",s[i].name,&s[i].marks);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%s  %d\n",s[i].name,s[i].marks);
+    }
+    
+    free (s);
+    
+    return 0;
+}
+```
 
 
 
 Output:
 
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/e457a000-e8dc-47af-9808-7e81eace0c60)
+
 
 
 
